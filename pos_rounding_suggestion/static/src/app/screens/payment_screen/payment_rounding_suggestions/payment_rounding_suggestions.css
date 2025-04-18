@@ -1,0 +1,22 @@
+.rounding-suggestions {
+    .suggestion-item {
+        cursor: pointer;
+        padding: 8px;
+        margin: 4px 0;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: rgba(0, 123, 255, 0.1);
+        }
+
+        &.selected {
+            background-color: #578FCA;
+            color: white;
+
+            .difference {
+                color: #ffffff;
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="pos_rounding_suggestion.PaymentScreenButtons" t-inherit="point_of_sale.PaymentScreenButtons" t-inherit-mode="extension">
+        <xpath expr="//button[hasclass('js_invoice')]" position="after">
+            <button class="button btn btn-light py-3 text-start rounded-0 border-bottom" t-att-class="{ 'highlight text-bg-primary': currentOrder.is_rounding_suggestion() }" 
+                t-on-click="toggleIsRoudingSuggestion">
+                <i class="fa fa-lg fa-lightbulb-o" /> Rounding Suggestions
+            </button>
+            <PaymentScreenRoundingSuggestions t-if="currentOrder.is_rounding_suggestion()"/>
+        </xpath>
+    </t>
+
+</templates>

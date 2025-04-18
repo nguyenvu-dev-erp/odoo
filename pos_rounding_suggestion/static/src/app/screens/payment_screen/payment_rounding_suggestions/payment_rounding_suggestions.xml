@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="pos_rounding_suggestion.PaymentScreenRoundingSuggestions">
+        <div class="rounding-suggestions">
+            <!-- <div class="title">Rounding Suggestions</div> -->
+            <div class="suggestions-list">
+                <t t-foreach="state.suggestions" t-as="suggestion" t-key="suggestion.name">
+                    <div class="suggestion-item" 
+                    t-att-class="{'selected': state.selectedSuggestion === suggestion}"
+                    t-on-click="() => this.applySuggestion(suggestion)">
+                        <span class="name"><t t-esc="suggestion.name"/>: </span>
+                        <span class="amount"><t t-esc="this.formatAmount(suggestion.amount)"/></span>
+                        <span class="difference" t-if="suggestion.difference">
+                            (+<t t-esc="this.formatAmount(suggestion.difference)"/>)
+                        </span>
+                    </div>
+                </t>
+            </div>
+        </div>
+    </t>
+</templates>

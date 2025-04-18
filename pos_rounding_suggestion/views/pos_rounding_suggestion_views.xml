@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="pos_rounding_suggestion_view_tree" model="ir.ui.view">
+        <field name="name">pos.rounding.suggestion.view.tree</field>
+        <field name="model">pos.rounding.suggestion</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="name" required="1"/>
+                <field name="multiplier" required="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="pos_rounding_suggestion_action" model="ir.actions.act_window">
+        <field name="name">Rounding Suggestions</field>
+        <field name="res_model">pos.rounding.suggestion</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <menuitem
+        id="pos_rounding_suggestion_menu"
+        name="Rounding Suggestions"
+        action="pos_rounding_suggestion_action"
+        parent="point_of_sale.menu_point_config_product"
+        sequence="10"/>
+
+</odoo>
